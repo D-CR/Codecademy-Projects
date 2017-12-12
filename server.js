@@ -47,7 +47,11 @@ const routes = {
 
 function createComment(url, request){
       let response = {};
-
+      // I don't understand why Object.keys isn't returning 0. I have tried multiple iterations
+      // of this such and you will see some in other functions. But I was not able to get them to work
+      // However, when being tested in repl.it and other which the test code it was returning false or 0.
+      // What you're seeing here is not representative of the number of permutations I've tried.
+      // I'm assuming there is a better approach?
       const reqBody = request.body;
       const checkForObj = Object.keys(reqBody);
       if (!reqBody.comment) {
